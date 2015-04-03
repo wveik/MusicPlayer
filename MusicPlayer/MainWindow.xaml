@@ -1,8 +1,15 @@
 ﻿<Window x:Class="MusicPlayer.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="My WPF Music Player" Height="330" Width="460">
+        Title="My WPF Music Player" Height="330" Width="460"
+        Background="#c8cfc3" WindowStartupLocation="CenterScreen"        
+        >
     <Grid>
+        <MediaElement
+            Name="MyMediaElement"
+            LoadedBehavior="Manual"
+            Source="C:\Users\kataev2\Downloads\Moby - Lift Me Up  (audiopoisk.com).mp3" />
         
+        <Button Click="Play" Width="100" Height="25">Play</Button>
     </Grid>
 </Window>

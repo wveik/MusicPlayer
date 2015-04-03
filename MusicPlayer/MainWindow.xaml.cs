@@ -21,5 +21,9 @@ namespace MusicPlayer {
         public MainWindow() {
             InitializeComponent();
         }
+
+        private void Play(object sender, RoutedEventArgs args) {
+            MyMediaElement.Play();
+        }
     }
 }
