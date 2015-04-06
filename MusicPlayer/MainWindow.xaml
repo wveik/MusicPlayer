@@ -27,7 +27,21 @@
                 Grid.Column="0"
                 Grid.RowSpan="2"
                 Margin="0,0,10,0">
-                <ListBoxItem>Placeholder</ListBoxItem>
+                <ListBoxItem>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <Image
+                            Width="24" Height="24"
+                            Margin="4"
+                            VerticalAlignment="Center"
+                            Source=".\Asserts\album.jpg" />
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock FontWeight="Bold" Text="Загаловок песни" />
+                            <TextBlock Text="Название группы" />
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </ListBoxItem>
             </ListBox>
            
             <!-- Сейчас проигрываеться -->
@@ -35,8 +49,28 @@
                 Width="150"
                 Margin="0,0,0,10"
                 Grid.Column="1" 
-                Grid.Row="0"
-                ></ContentControl>
+                Grid.Row="0">
+                <Canvas>
+                    <Image
+                       Width="150" Height="150"
+                       Source=".\Asserts\album.jpg" />
+                    <StackPanel Canvas.Top="160">
+                        <TextBlock
+                            Width="150"
+                            FontWeight="Bold"
+                            Text="Загаловок песни"
+                            TextTrimming="CharacterEllipsis" />
+                        <TextBlock
+                            Width="150"
+                            Text="Название песни"
+                            TextTrimming="CharacterEllipsis" />
+                        <TextBlock
+                            Width="150"
+                            Text="Название группы"
+                            TextTrimming="CharacterEllipsis" />
+                    </StackPanel>
+                </Canvas>
+            </ContentControl>
             
             <!-- Контроллы -->
             <StackPanel
@@ -58,8 +92,12 @@
                 Margin="4,0,4,0"
                 VerticalAlignment="Center"
                 Click="Play" >
-                Play
-            </ToggleButton>
+                    <Image
+                        Name="PlayImage"
+                        Width="42" Height="42"                        
+                        VerticalAlignment="Center"
+                        Source=".\Asserts\play.png" />
+                </ToggleButton>
             
             <!-- Продолжительность -->
             <TextBlock

@@ -19,16 +19,35 @@ namespace MusicPlayer {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+
+        private readonly string PLAY_IMAGE = @".\Asserts\play.png";
+        private readonly string PAUSE_IMAGE = @".\Asserts\pause.png";
+
         public MainWindow() {
             InitializeComponent();
         }
 
         private void Play(object sender, RoutedEventArgs args) {
             ToggleButton tb = (ToggleButton)sender;
-            if (tb.IsChecked.Value)
+            if (tb.IsChecked.Value) {
                 MyMediaElement.Play();
-            else
+
+                PlayImage.Source = GetImageForButton(PAUSE_IMAGE);
+            } else {
                 MyMediaElement.Pause();
+
+                PlayImage.Source = GetImageForButton(PLAY_IMAGE);
+            }
+        }
+
+        private BitmapImage GetImageForButton(string path) {
+
+            BitmapImage result = new BitmapImage();
+            result.BeginInit();
+            result.UriSource = new Uri(path, UriKind.Relative);
+            result.EndInit();
+
+            return result;
         }
     }
 }
