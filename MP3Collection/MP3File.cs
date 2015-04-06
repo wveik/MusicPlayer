@@ -42,7 +42,7 @@ namespace MP3Collection {
                     if (tag.Substring(0, 3) == "TAG") {
                         HasTag = true;
 
-                        Title = tag;// RemoveWhiteSpace(tag.Substring(3, 30));
+                        Title = RemoveWhiteSpace(tag.Substring(3, 30));
                         Artist = RemoveWhiteSpace(tag.Substring(33, 30));
                         Album = RemoveWhiteSpace(tag.Substring(63, 30));
                         Year = RemoveWhiteSpace(tag.Substring(93, 4));
@@ -64,9 +64,10 @@ namespace MP3Collection {
                         } else {
                             AlbumArt = defaultAlbumArt;                            
                         }
-                    } else {
+                    } 
+
+                    if(string.IsNullOrEmpty(Title))
                         Title = Path.GetFileName(path);
-                    }
                 } catch (Exception ex) {
 
                 }
