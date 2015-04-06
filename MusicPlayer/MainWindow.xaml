@@ -10,6 +10,67 @@
             LoadedBehavior="Manual"
             Source="C:\Users\kataev2\Downloads\Moby - Lift Me Up  (audiopoisk.com).mp3" />
         
-        <Button Click="Play" Width="100" Height="25">Play</Button>
+        <Grid Margin="10" Background="LightBlue" ShowGridLines="True">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="220" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <!-- Список песен -->
+            <Rectangle
+                Grid.Column="0"
+                Grid.RowSpan="2"
+                Margin="0,0,10,0"
+                Fill="#8FFF" />
+           
+            <!-- Сейчас проигрываеться -->
+            <Rectangle
+                Width="150"
+                Margin="0,0,0,10"
+                Grid.Column="1" 
+                Grid.Row="0"
+                Fill="#8FFF"
+                />
+            
+            <!-- Контроллы -->
+            <StackPanel
+                Grid.Column="1"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Orientation="Horizontal"
+                Background="Orange">
+
+            <!-- Громкость -->
+            <Rectangle 
+                Width="46" Height="10"
+                VerticalAlignment="Center"
+                Fill="#8FFF"
+                />
+            
+            <!-- Play -->
+            <Button
+                Width="50" Height="50"
+                Margin="4,0,4,0"
+                VerticalAlignment="Center"
+                Click="Play" >
+                Play
+            </Button>
+            
+            <!-- Продолжительность -->
+            <Rectangle
+                Width="40" Height="22"
+                VerticalAlignment="Center"
+                Fill="#8FFF" />
+            
+            </StackPanel>
+            
+        </Grid>
     </Grid>
 </Window>
