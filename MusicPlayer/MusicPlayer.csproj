@@ -102,6 +102,12 @@
   <ItemGroup>
     <Resource Include="Asserts\pause.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MP3Collection\MP3Collection.csproj">
+      <Project>{c0c6fd1b-db28-4093-898a-94939b408cd3}</Project>
+      <Name>MP3Collection</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
