@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
 
 namespace MusicPlayer {
     /// <summary>
@@ -23,7 +24,11 @@ namespace MusicPlayer {
         }
 
         private void Play(object sender, RoutedEventArgs args) {
-            MyMediaElement.Play();
+            ToggleButton tb = (ToggleButton)sender;
+            if (tb.IsChecked.Value)
+                MyMediaElement.Play();
+            else
+                MyMediaElement.Pause();
         }
     }
 }

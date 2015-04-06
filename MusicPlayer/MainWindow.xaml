@@ -10,7 +10,7 @@
             LoadedBehavior="Manual"
             Source="C:\Users\kataev2\Downloads\Moby - Lift Me Up  (audiopoisk.com).mp3" />
         
-        <Grid Margin="10" Background="LightBlue" ShowGridLines="True">
+        <Grid Margin="10">
             
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -23,20 +23,20 @@
             </Grid.RowDefinitions>
             
             <!-- Список песен -->
-            <Rectangle
+            <ListBox
                 Grid.Column="0"
                 Grid.RowSpan="2"
-                Margin="0,0,10,0"
-                Fill="#8FFF" />
+                Margin="0,0,10,0">
+                <ListBoxItem>Placeholder</ListBoxItem>
+            </ListBox>
            
             <!-- Сейчас проигрываеться -->
-            <Rectangle
+            <ContentControl
                 Width="150"
                 Margin="0,0,0,10"
                 Grid.Column="1" 
                 Grid.Row="0"
-                Fill="#8FFF"
-                />
+                ></ContentControl>
             
             <!-- Контроллы -->
             <StackPanel
@@ -44,30 +44,28 @@
                 Grid.Row="1"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Center"
-                Orientation="Horizontal"
-                Background="Orange">
+                Orientation="Horizontal">
 
             <!-- Громкость -->
-            <Rectangle 
+            <Slider 
                 Width="46" Height="10"
                 VerticalAlignment="Center"
-                Fill="#8FFF"
                 />
             
             <!-- Play -->
-            <Button
+            <ToggleButton
                 Width="50" Height="50"
                 Margin="4,0,4,0"
                 VerticalAlignment="Center"
                 Click="Play" >
                 Play
-            </Button>
+            </ToggleButton>
             
             <!-- Продолжительность -->
-            <Rectangle
+            <TextBlock
                 Width="40" Height="22"
-                VerticalAlignment="Center"
-                Fill="#8FFF" />
+                Text="00:46"
+                VerticalAlignment="Center" />
             
             </StackPanel>
             
